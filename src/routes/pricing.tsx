@@ -2,9 +2,18 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { Check } from "lucide-react";
 import { SiteFooter, SiteNav } from "@/components/site-nav";
 import { Button } from "@/components/ui/button";
+import { pageHead } from "@/lib/site";
 import { cn } from "@/lib/utils";
 
-export const Route = createFileRoute("/pricing")({ component: PricingPage });
+export const Route = createFileRoute("/pricing")({
+  head: () =>
+    pageHead({
+      title: "Pricing",
+      description: "Free, Studio at $39 a month, or Company at $129. One visitor message is one answer.",
+      path: "/pricing",
+    }),
+  component: PricingPage,
+});
 
 const plans = [
   {
@@ -76,9 +85,15 @@ function PricingPage() {
                   </li>
                 ))}
               </ul>
-              <Button className="mt-8" variant={p.featured ? "secondary" : "default"} asChild>
-                <Link to="/app">Start in the studio</Link>
-              </Button>
+              {p.featured ? (
+                <Button className="mt-8" variant="secondary" asChild>
+                  <Link to="/app/new">Create an agent</Link>
+                </Button>
+              ) : (
+                <p className="mt-8 text-sm text-muted-foreground">
+                  {p.name === "Free" ? "Use it while you test one agent." : "For a team that already hands off."}
+                </p>
+              )}
             </article>
           ))}
         </div>

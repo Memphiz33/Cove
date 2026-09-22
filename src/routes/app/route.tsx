@@ -58,8 +58,8 @@ function AppShell() {
             : null}
         </nav>
         <div className="border-t border-border p-3 text-xs text-muted-foreground">
-          <Link to="/pricing" className="hover:text-foreground">
-            Pricing
+          <Link to="/app/pipeline" className="mt-2 block hover:text-foreground">
+            Outreach
           </Link>
         </div>
       </aside>
@@ -69,9 +69,14 @@ function AppShell() {
             <LogoMark />
             <span className="font-display text-base font-medium">Studio</span>
           </Link>
-          <Link to="/app/new" className="text-sm font-medium">
-            New
-          </Link>
+          <div className="flex items-center gap-4">
+            <Link to="/app/pipeline" className="text-sm font-medium">
+              Outreach
+            </Link>
+            <Link to="/app/new" className="text-sm font-medium">
+              New
+            </Link>
+          </div>
         </header>
         <div className="flex min-h-0 flex-1 flex-col">
           <Outlet />

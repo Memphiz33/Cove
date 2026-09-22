@@ -5,10 +5,19 @@ import { FakeSite } from "@/components/fake-site";
 import { ReceiptDemo } from "@/components/receipt-demo";
 import { SiteFooter, SiteNav } from "@/components/site-nav";
 import { Button } from "@/components/ui/button";
+import { pageHead } from "@/lib/site";
 import { SEED_AGENTS } from "@/lib/seed";
 import { cn } from "@/lib/utils";
 
-export const Route = createFileRoute("/")({ component: Home });
+export const Route = createFileRoute("/")({
+  head: () =>
+    pageHead({
+      title: "Cuve",
+      description: "Cuve is the support agent that cites its sources. If it cannot cite, it hands off.",
+      path: "/",
+    }),
+  component: Home,
+});
 
 const cuve = SEED_AGENTS[0];
 const northline = SEED_AGENTS[1];
@@ -45,19 +54,16 @@ function Hero() {
             Train Cuve on FAQs, policies, products, and procedures. Every reply cites the passage it used. If it
             cannot cite, it hands off. The model is never asked to invent.
           </p>
-          <div className="mt-8 flex flex-wrap gap-3">
+          <div className="mt-8">
             <Button size="lg" asChild>
-              <Link to="/app">
-                Open the studio
+              <Link to="/app/new">
+                Create an agent
                 <ArrowRight className="size-4" />
               </Link>
             </Button>
-            <Button size="lg" variant="secondary" asChild>
-              <Link to="/pricing">See pricing</Link>
-            </Button>
           </div>
           <p className="mt-6 text-xs text-muted-foreground">
-            Ask the live agent on the right. The Lisbon chip is a trap. It should hand off.
+            Ask the live agent. The Lisbon chip is a trap. It should hand off.
           </p>
         </div>
         <div className="h-[min(560px,70vh)] min-h-[420px]">
@@ -78,7 +84,7 @@ function Logos() {
         </p>
         <div className="mt-6 flex flex-wrap items-center justify-center gap-x-10 gap-y-3">
           {names.map((n) => (
-            <span key={n} className="font-display text-lg text-muted-foreground/80">
+            <span key={n} className="font-display text-lg text-muted-foreground">
               {n}
             </span>
           ))}
@@ -152,12 +158,14 @@ function StudioPreview() {
             Preview the bubble on a customer layout while knowledge is still open. Northline is a live apparel
             agent for returns, sizing, and late shipments.
           </p>
-          <Button className="mt-8" asChild>
-            <Link to="/app/$agentId" params={{ agentId: northline.id }} search={{ tab: "widget" }}>
-              Open Northline
-              <ArrowRight className="size-4" />
-            </Link>
-          </Button>
+          <Link
+            to="/app/$agentId"
+            params={{ agentId: northline.id }}
+            search={{ tab: "widget" }}
+            className="mt-8 inline-flex items-center gap-1 text-sm font-medium underline decoration-border underline-offset-4"
+          >
+            See it on Northline
+          </Link>
         </div>
         <FakeSite agent={northline} />
       </div>
@@ -225,9 +233,12 @@ function PricingTeaser() {
             </article>
           ))}
         </div>
-        <Button className="mt-8" variant="secondary" asChild>
-          <Link to="/pricing">Full plans</Link>
-        </Button>
+        <Link
+          to="/pricing"
+          className="mt-8 inline-block text-sm font-medium underline decoration-border underline-offset-4"
+        >
+          Compare plans
+        </Link>
       </div>
     </section>
   );
@@ -244,8 +255,8 @@ function Close() {
         know. Then ask something it should not.
       </p>
       <Button size="lg" className="mt-8" asChild>
-        <Link to="/app">
-          Enter the studio
+        <Link to="/app/new">
+          Create an agent
           <ArrowRight className="size-4" />
         </Link>
       </Button>

@@ -26,6 +26,7 @@ export function ChatPanel({ agent, channel, variant = "page", className }: Props
   const [convId, setConvId] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
   const scroller = useRef<HTMLDivElement>(null);
+  const sentAt = useRef<number[]>([]);
   const grounding = agent.grounding ?? "strict";
   const handoffLine = agent.handoffLine || DEFAULT_HANDOFF;
   const liveAgent = { ...agent, knowledge };
@@ -60,6 +61,17 @@ export function ChatPanel({ agent, channel, variant = "page", className }: Props
   async function send(text: string) {
     const question = text.trim();
     if (!question || pending) return;
+    if (question.length > 800) {
+      toast.error("Keep the question under 800 characters.");
+      return;
+    }
+    const now = Date.now();
+    sentAt.current = sentAt.current.filter((t) => now - t < 60_000);
+    if (sentAt.current.length >= 8) {
+      toast.error("Too many questions in a minute. Wait a moment.");
+      return;
+    }
+    sentAt.current.push(now);
     setInput("");
     setError(null);
 
@@ -231,7 +243,9 @@ export function ChatPanel({ agent, channel, variant = "page", className }: Props
             }
           }}
           rows={1}
-          placeholder="Ask anything it should know…"
+          maxLength={800}
+          aria-label="Question"
+          placeholder="Ask anything it should know"
           className="max-h-28 min-h-11 flex-1 resize-none bg-transparent px-1 py-2.5 text-sm outline-none placeholder:text-muted-foreground"
         />
         <button

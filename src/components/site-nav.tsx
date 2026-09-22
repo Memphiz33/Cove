@@ -11,7 +11,7 @@ export function SiteNav({ solid = false }: { solid?: boolean }) {
         solid ? "border-border bg-background" : "border-transparent bg-background/80 backdrop-blur-md",
       )}
     >
-      <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4 sm:px-6">
+      <div className="mx-auto flex h-16 max-w-6xl items-center justify-between gap-3 px-4 sm:px-6">
         <Link to="/" className="rounded-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/40">
           <Logo />
         </Link>
@@ -25,16 +25,28 @@ export function SiteNav({ solid = false }: { solid?: boolean }) {
           <Link to="/pricing" className="hover:text-foreground">
             Pricing
           </Link>
+          <Link to="/app" className="hover:text-foreground">
+            Studio
+          </Link>
         </nav>
-        <div className="flex items-center gap-2">
-          <Button variant="ghost" size="sm" className="hidden sm:inline-flex" asChild>
-            <Link to="/app">Open studio</Link>
-          </Button>
-          <Button size="sm" asChild>
-            <Link to="/app/new">Create an agent</Link>
-          </Button>
-        </div>
+        <Button size="sm" asChild>
+          <Link to="/app/new">Create an agent</Link>
+        </Button>
       </div>
+      <nav className="flex gap-5 overflow-x-auto px-4 pb-3 text-sm text-muted-foreground md:hidden">
+        <Link to="/" hash="how" className="shrink-0 hover:text-foreground">
+          How it works
+        </Link>
+        <Link to="/" hash="receipts" className="shrink-0 hover:text-foreground">
+          Receipts
+        </Link>
+        <Link to="/pricing" className="shrink-0 hover:text-foreground">
+          Pricing
+        </Link>
+        <Link to="/app" className="shrink-0 hover:text-foreground">
+          Studio
+        </Link>
+      </nav>
     </header>
   );
 }
@@ -44,7 +56,17 @@ export function SiteFooter() {
     <footer className="border-t border-border">
       <div className="mx-auto flex max-w-6xl flex-col gap-4 px-4 py-10 sm:flex-row sm:items-center sm:justify-between sm:px-6">
         <Logo />
-        <p className="text-sm text-muted-foreground">Answers with receipts. If it cannot cite, it hands off.</p>
+        <nav className="flex flex-wrap gap-x-5 gap-y-2 text-sm text-muted-foreground">
+          <Link to="/pricing" className="hover:text-foreground">
+            Pricing
+          </Link>
+          <Link to="/privacy" className="hover:text-foreground">
+            Privacy
+          </Link>
+          <Link to="/terms" className="hover:text-foreground">
+            Terms
+          </Link>
+        </nav>
       </div>
     </footer>
   );

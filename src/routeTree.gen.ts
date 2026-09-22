@@ -12,9 +12,12 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AppRouteRouteImport } from './routes/app/route'
 import { Route as PricingRouteImport } from './routes/pricing'
+import { Route as PrivacyRouteImport } from './routes/privacy'
+import { Route as TermsRouteImport } from './routes/terms'
 import { Route as AppIndexRouteImport } from './routes/app/index'
 import { Route as AppAgentIdRouteImport } from './routes/app/$agentId'
 import { Route as AppNewRouteImport } from './routes/app/new'
+import { Route as AppPipelineRouteImport } from './routes/app/pipeline'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -29,6 +32,16 @@ const AppRouteRoute = AppRouteRouteImport.update({
 const PricingRoute = PricingRouteImport.update({
   id: '/pricing',
   path: '/pricing',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PrivacyRoute = PrivacyRouteImport.update({
+  id: '/privacy',
+  path: '/privacy',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TermsRoute = TermsRouteImport.update({
+  id: '/terms',
+  path: '/terms',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AppIndexRoute = AppIndexRouteImport.update({
@@ -46,20 +59,31 @@ const AppNewRoute = AppNewRouteImport.update({
   path: '/new',
   getParentRoute: () => AppRouteRoute,
 } as any)
+const AppPipelineRoute = AppPipelineRouteImport.update({
+  id: '/pipeline',
+  path: '/pipeline',
+  getParentRoute: () => AppRouteRoute,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/app': typeof AppRouteRouteWithChildren
   '/pricing': typeof PricingRoute
+  '/privacy': typeof PrivacyRoute
+  '/terms': typeof TermsRoute
   '/app/$agentId': typeof AppAgentIdRoute
   '/app/new': typeof AppNewRoute
+  '/app/pipeline': typeof AppPipelineRoute
   '/app/': typeof AppIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/pricing': typeof PricingRoute
+  '/privacy': typeof PrivacyRoute
+  '/terms': typeof TermsRoute
   '/app/$agentId': typeof AppAgentIdRoute
   '/app/new': typeof AppNewRoute
+  '/app/pipeline': typeof AppPipelineRoute
   '/app': typeof AppIndexRoute
 }
 export interface FileRoutesById {
@@ -67,22 +91,45 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/app': typeof AppRouteRouteWithChildren
   '/pricing': typeof PricingRoute
+  '/privacy': typeof PrivacyRoute
+  '/terms': typeof TermsRoute
   '/app/$agentId': typeof AppAgentIdRoute
   '/app/new': typeof AppNewRoute
+  '/app/pipeline': typeof AppPipelineRoute
   '/app/': typeof AppIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/app' | '/pricing' | '/app/$agentId' | '/app/new' | '/app/'
+  fullPaths:
+    | '/'
+    | '/app'
+    | '/pricing'
+    | '/privacy'
+    | '/terms'
+    | '/app/$agentId'
+    | '/app/new'
+    | '/app/pipeline'
+    | '/app/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/pricing' | '/app/$agentId' | '/app/new' | '/app'
+  to:
+    | '/'
+    | '/pricing'
+    | '/privacy'
+    | '/terms'
+    | '/app/$agentId'
+    | '/app/new'
+    | '/app/pipeline'
+    | '/app'
   id:
     | '__root__'
     | '/'
     | '/app'
     | '/pricing'
+    | '/privacy'
+    | '/terms'
     | '/app/$agentId'
     | '/app/new'
+    | '/app/pipeline'
     | '/app/'
   fileRoutesById: FileRoutesById
 }
@@ -90,6 +137,8 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AppRouteRoute: typeof AppRouteRouteWithChildren
   PricingRoute: typeof PricingRoute
+  PrivacyRoute: typeof PrivacyRoute
+  TermsRoute: typeof TermsRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -115,6 +164,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof PricingRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/privacy': {
+      id: '/privacy'
+      path: '/privacy'
+      fullPath: '/privacy'
+      preLoaderRoute: typeof PrivacyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/terms': {
+      id: '/terms'
+      path: '/terms'
+      fullPath: '/terms'
+      preLoaderRoute: typeof TermsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/app/': {
       id: '/app/'
       path: '/'
@@ -136,18 +199,27 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AppNewRouteImport
       parentRoute: typeof AppRouteRoute
     }
+    '/app/pipeline': {
+      id: '/app/pipeline'
+      path: '/pipeline'
+      fullPath: '/app/pipeline'
+      preLoaderRoute: typeof AppPipelineRouteImport
+      parentRoute: typeof AppRouteRoute
+    }
   }
 }
 
 interface AppRouteRouteChildren {
   AppAgentIdRoute: typeof AppAgentIdRoute
   AppNewRoute: typeof AppNewRoute
+  AppPipelineRoute: typeof AppPipelineRoute
   AppIndexRoute: typeof AppIndexRoute
 }
 
 const AppRouteRouteChildren: AppRouteRouteChildren = {
   AppAgentIdRoute: AppAgentIdRoute,
   AppNewRoute: AppNewRoute,
+  AppPipelineRoute: AppPipelineRoute,
   AppIndexRoute: AppIndexRoute,
 }
 
@@ -159,6 +231,8 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AppRouteRoute: AppRouteRouteWithChildren,
   PricingRoute: PricingRoute,
+  PrivacyRoute: PrivacyRoute,
+  TermsRoute: TermsRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

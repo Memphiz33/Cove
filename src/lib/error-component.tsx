@@ -1,15 +1,9 @@
 import type { ErrorComponentProps } from "@tanstack/react-router";
 import { TriangleAlert } from "lucide-react";
 
-const FALLBACK_MESSAGE = "An unexpected error occurred. Try reloading the page.";
+const FALLBACK_MESSAGE = "Something went wrong. Reload the page and try again.";
 
-function errorMessage(error: unknown): string {
-  if (error instanceof Error && error.message) return error.message;
-  if (typeof error === "string" && error) return error;
-  return FALLBACK_MESSAGE;
-}
-
-export function AppErrorComponent({ error }: ErrorComponentProps) {
+export function AppErrorComponent(_props: ErrorComponentProps) {
   return (
     <main
       className={
@@ -21,9 +15,7 @@ export function AppErrorComponent({ error }: ErrorComponentProps) {
         <TriangleAlert className="size-10" strokeWidth={2} />
       </span>
       <h1 className="text-lg font-semibold">Something went wrong</h1>
-      <p className="max-w-md text-sm break-words text-zinc-500 dark:text-zinc-400">
-        {errorMessage(error)}
-      </p>
+      <p className="max-w-md text-sm break-words text-zinc-500 dark:text-zinc-400">{FALLBACK_MESSAGE}</p>
     </main>
   );
 }

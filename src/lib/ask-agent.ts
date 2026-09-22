@@ -25,7 +25,24 @@ export const DEFAULT_HANDOFF =
   "I don't have that in my sources, so I won't guess. I can connect you with a person if you want.";
 
 export const askAgent = createServerFn({ method: "POST" })
-  .validator((input: AskInput) => input)
+  .validator((input: AskInput) => {
+    const question = input.question?.trim() ?? "";
+    if (!question || question.length > 800) {
+      throw new Error("Question is empty or too long.");
+    }
+    return {
+      ...input,
+      question,
+      agentName: input.agentName.slice(0, 80),
+      company: input.company.slice(0, 80),
+      handoffLine: (input.handoffLine ?? "").slice(0, 400),
+      passages: input.passages.slice(0, 12000),
+      history: input.history.slice(-8).map((turn) => ({
+        role: turn.role,
+        content: turn.content.slice(0, 2000),
+      })),
+    };
+  })
   .handler(async ({ data }): Promise<{ ok: true; text: string } | { ok: false; error: string }> => {
     const apiKey = process.env.XAI_API_KEY;
     if (!apiKey) return { ok: false, error: "AI is not available" };

@@ -30,7 +30,13 @@ export function SettingsForm({ agent }: { agent: Agent }) {
         <Input
           id="set-name"
           value={agent.name}
-          onChange={(e) => updateAgent(agent.id, { name: e.target.value })}
+          maxLength={60}
+          required
+          onChange={(e) => {
+            const value = e.target.value.slice(0, 60);
+            if (!value.trim()) return;
+            updateAgent(agent.id, { name: value });
+          }}
         />
       </div>
       <div className="space-y-2">
@@ -38,7 +44,13 @@ export function SettingsForm({ agent }: { agent: Agent }) {
         <Input
           id="set-company"
           value={agent.company}
-          onChange={(e) => updateAgent(agent.id, { company: e.target.value })}
+          maxLength={80}
+          required
+          onChange={(e) => {
+            const value = e.target.value.slice(0, 80);
+            if (!value.trim()) return;
+            updateAgent(agent.id, { company: value });
+          }}
         />
       </div>
       <div className="space-y-2">
@@ -46,7 +58,8 @@ export function SettingsForm({ agent }: { agent: Agent }) {
         <Input
           id="set-tagline"
           value={agent.tagline}
-          onChange={(e) => updateAgent(agent.id, { tagline: e.target.value })}
+          maxLength={140}
+          onChange={(e) => updateAgent(agent.id, { tagline: e.target.value.slice(0, 140) })}
         />
       </div>
       <div className="space-y-2">
