@@ -108,7 +108,7 @@
   font-family: var(--font-display);
 }
 
-.cove-select {
+.cuve-select {
   display: flex;
   height: 2.75rem;
   width: 100%;
@@ -124,7 +124,7 @@
 .stagger-in > * {
   opacity: 0;
   transform: translateY(10px);
-  animation: cove-in 500ms var(--ease-out) forwards;
+  animation: cuve-in 500ms var(--ease-out) forwards;
 }
 .stagger-in > *:nth-child(1) {
   animation-delay: 40ms;
@@ -142,14 +142,14 @@
   animation-delay: 280ms;
 }
 
-@keyframes cove-in {
+@keyframes cuve-in {
   to {
     opacity: 1;
     transform: translateY(0);
   }
 }
 
-@keyframes cove-pulse {
+@keyframes cuve-pulse {
   0%,
   100% {
     opacity: 0.35;
@@ -160,7 +160,7 @@
 }
 
 .typing-dot {
-  animation: cove-pulse 1s ease-in-out infinite;
+  animation: cuve-pulse 1s ease-in-out infinite;
 }
 .typing-dot:nth-child(2) {
   animation-delay: 140ms;
@@ -187,7 +187,7 @@
   }
 }
 
-.cove-widget[data-palette="ink"] {
+.cuve-widget[data-palette="ink"] {
   --w-bg: #1c2430;
   --w-fg: #f3f1ec;
   --w-muted: #c4c0b6;
@@ -196,7 +196,7 @@
   --w-user: #3e5a6e;
   --w-user-fg: #f4f1ec;
 }
-.cove-widget[data-palette="slate"] {
+.cuve-widget[data-palette="slate"] {
   --w-bg: #3e5a6e;
   --w-fg: #f4f1ec;
   --w-muted: #d5dde3;
@@ -205,7 +205,7 @@
   --w-user: #1c2430;
   --w-user-fg: #f3f1ec;
 }
-.cove-widget[data-palette="forest"] {
+.cuve-widget[data-palette="forest"] {
   --w-bg: #2f5d45;
   --w-fg: #f3f1ec;
   --w-muted: #d4e0d8;
@@ -214,7 +214,7 @@
   --w-user: #1c2430;
   --w-user-fg: #f3f1ec;
 }
-.cove-widget[data-palette="sand"] {
+.cuve-widget[data-palette="sand"] {
   --w-bg: #6a655c;
   --w-fg: #f3f1ec;
   --w-muted: #e4dfd6;

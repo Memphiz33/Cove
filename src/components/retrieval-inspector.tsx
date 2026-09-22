@@ -53,7 +53,7 @@ export function RetrievalInspector({ agent }: { agent: Agent }) {
             <p className="font-medium">Would refuse, not invent.</p>
             <p className="mt-1 text-muted-foreground">
               Nothing in knowledge clears the {agent.grounding === "assist" ? "assist" : "strict"} bar.
-              Cove will send the handoff line
+              Cuve will send the handoff line
               {agent.grounding === "strict" ? " without calling the model" : ""}.
             </p>
           </div>

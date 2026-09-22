@@ -31,7 +31,7 @@ export function Logo({ className, wordmark = true }: { className?: string; wordm
     <span className={cn("inline-flex items-center gap-2", className)}>
       <LogoMark />
       {wordmark ? (
-        <span className="font-display text-lg font-medium tracking-tight text-foreground">Cove</span>
+        <span className="font-display text-lg font-medium tracking-tight text-foreground">Cuve</span>
       ) : null}
     </span>
   );

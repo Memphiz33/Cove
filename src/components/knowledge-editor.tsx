@@ -148,7 +148,7 @@ export function KnowledgeEditor({ agent }: { agent: Agent }) {
                     onChange={(e) =>
                       updateKnowledge(agent.id, selected.id, { type: e.target.value as KnowledgeType })
                     }
-                    className="cove-select"
+                    className="cuve-select"
                   >
                     {KNOWLEDGE_TYPES.map((t) => (
                       <option key={t} value={t}>

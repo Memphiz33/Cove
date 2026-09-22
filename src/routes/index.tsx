@@ -10,7 +10,7 @@ import { cn } from "@/lib/utils";
 
 export const Route = createFileRoute("/")({ component: Home });
 
-const cove = SEED_AGENTS[0];
+const cuve = SEED_AGENTS[0];
 const northline = SEED_AGENTS[1];
 
 function Home() {
@@ -42,7 +42,7 @@ function Hero() {
             Answers with receipts.
           </h1>
           <p className="mt-6 max-w-md text-base leading-relaxed text-muted-foreground sm:text-lg">
-            Train Cove on FAQs, policies, products, and procedures. Every reply cites the passage it used. If it
+            Train Cuve on FAQs, policies, products, and procedures. Every reply cites the passage it used. If it
             cannot cite, it hands off. The model is never asked to invent.
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
@@ -61,7 +61,7 @@ function Hero() {
           </p>
         </div>
         <div className="h-[min(560px,70vh)] min-h-[420px]">
-          <ChatPanel agent={cove} channel="playground" className="h-full" />
+          <ChatPanel agent={cuve} channel="playground" className="h-full" />
         </div>
       </div>
     </section>
@@ -240,7 +240,7 @@ function Close() {
         Only answer what you can stand behind.
       </h2>
       <p className="mx-auto mt-4 max-w-md text-muted-foreground">
-        Open a seeded agent (Northline apparel, Lumen Cloud, or Cove itself) and ask it something it should
+        Open a seeded agent (Northline apparel, Lumen Cloud, or Cuve itself) and ask it something it should
         know. Then ask something it should not.
       </p>
       <Button size="lg" className="mt-8" asChild>

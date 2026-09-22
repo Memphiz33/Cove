@@ -18,7 +18,7 @@ export function WidgetStudio({ agent }: { agent: Agent }) {
   const updateAgent = useStudio((s) => s.updateAgent);
   const conversations = useStudio((s) => s.conversations);
   const [copied, setCopied] = useState(false);
-  const snippet = `<script src="https://cove.example/widget.js" data-agent="${agent.id}" async></script>`;
+  const snippet = `<script src="https://cuve.example/widget.js" data-agent="${agent.id}" async></script>`;
   const rate = coverageRate(coverageFor(agent));
   const score = launchScore(launchChecks(agent, conversations));
   const warn = score < 100;
@@ -108,7 +108,7 @@ export function WidgetStudio({ agent }: { agent: Agent }) {
           onClick={() => patchWidget({ showBranding: !agent.widget.showBranding })}
           className="flex h-11 items-center justify-between rounded-xl bg-muted px-3 text-sm"
         >
-          <span>Cove badge</span>
+          <span>Cuve badge</span>
           <span
             className={cn(
               "relative h-6 w-10 rounded-full transition-colors duration-150",

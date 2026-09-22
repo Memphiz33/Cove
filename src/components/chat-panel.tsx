@@ -129,7 +129,7 @@ export function ChatPanel({ agent, channel, variant = "page", className }: Props
   return (
     <div
       className={cn(
-        "cove-widget flex min-h-0 flex-col overflow-hidden",
+        "cuve-widget flex min-h-0 flex-col overflow-hidden",
         isBubble ? "h-full" : "h-full rounded-2xl bg-card shadow-[var(--shadow-lift)]",
         className,
       )}
@@ -210,7 +210,7 @@ export function ChatPanel({ agent, channel, variant = "page", className }: Props
 
       {isBubble && agent.widget.showBranding ? (
         <p className="px-4 pb-1 text-center text-[10px] uppercase tracking-[0.16em] text-muted-foreground">
-          Powered by Cove
+          Powered by Cuve
         </p>
       ) : null}
 

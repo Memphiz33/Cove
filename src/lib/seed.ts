@@ -1,18 +1,18 @@
 import type { Agent, Conversation } from "./types";
 import { hoursAgo } from "./utils";
 
-export const COVE_ID = "cove";
+export const CUVE_ID = "cuve";
 export const NORTHLINE_ID = "northline";
 export const LUMEN_ID = "lumen";
 
 export const SEED_AGENTS: Agent[] = [
   {
-    id: COVE_ID,
-    name: "Cove",
-    company: "Cove",
+    id: CUVE_ID,
+    name: "Cuve",
+    company: "Cuve",
     role: "guide",
     tagline: "The support agent that cites its sources.",
-    greeting: "Hi, I'm Cove. Ask how I work, what I cost, or what happens when I don't know.",
+    greeting: "Hi, I'm Cuve. Ask how I work, what I cost, or what happens when I don't know.",
     suggested: [
       "How does grounding work?",
       "What's in the Studio plan?",
@@ -25,37 +25,37 @@ export const SEED_AGENTS: Agent[] = [
     widget: {
       position: "right",
       palette: "ink",
-      bubble: "Ask Cove",
+      bubble: "Ask Cuve",
       showBranding: true,
     },
     knowledge: [
       {
         id: "c1",
         type: "doc",
-        title: "What Cove is",
+        title: "What Cuve is",
         content:
-          "Cove is a grounded support agent you train on your own FAQs, policies, products, and procedures. Every reply cites the passage it used. You test in a playground with a confidence score before the widget goes live. Inbox, lead capture, coverage checks, and a live widget studio ship on the Studio plan. If a question is not in your sources, Cove hands off instead of guessing.",
+          "Cuve is a grounded support agent you train on your own FAQs, policies, products, and procedures. Every reply cites the passage it used. You test in a playground with a confidence score before the widget goes live. Inbox, lead capture, coverage checks, and a live widget studio ship on the Studio plan. If a question is not in your sources, Cuve hands off instead of guessing.",
       },
       {
         id: "c2",
         type: "faq",
         title: "How grounding works",
         content:
-          "Before answering, Cove retrieves the most relevant knowledge passages and only writes from those. Cited titles and excerpts appear under the reply. In Strict mode, a low-confidence question never reaches the model. Cove uses your handoff line instead. Assist mode still requires a source, but the bar is a little lower. Confidence is the retrieval score of the best matching passage, shown as a percentage.",
+          "Before answering, Cuve retrieves the most relevant knowledge passages and only writes from those. Cited titles and excerpts appear under the reply. In Strict mode, a low-confidence question never reaches the model. Cuve uses your handoff line instead. Assist mode still requires a source, but the bar is a little lower. Confidence is the retrieval score of the best matching passage, shown as a percentage.",
       },
       {
         id: "c3",
         type: "policy",
         title: "Plans and pricing",
         content:
-          "Cove has three plans. Free: 1 agent, playground, citations, 50 knowledge items. Studio at $39/month: 5 agents, live widget, inbox, lead capture, coverage, 200 knowledge items. Company at $129/month: unlimited agents, analytics, human handoff, custom palette, no Cove badge on the widget. Annual billing is 20% off. There are no message credits and no per-reply multipliers. One visitor message equals one answer.",
+          "Cuve has three plans. Free: 1 agent, playground, citations, 50 knowledge items. Studio at $39/month: 5 agents, live widget, inbox, lead capture, coverage, 200 knowledge items. Company at $129/month: unlimited agents, analytics, human handoff, custom palette, no Cuve badge on the widget. Annual billing is 20% off. There are no message credits and no per-reply multipliers. One visitor message equals one answer.",
       },
       {
         id: "c4",
         type: "faq",
-        title: "Will Cove invent answers",
+        title: "Will Cuve invent answers",
         content:
-          "No. If a refund policy, price, or feature is not in knowledge, Cove refuses and offers a handoff. Citations only appear when a real passage was used. Strict grounding skips the language model entirely when retrieval is below the bar, so a missing policy cannot be written from thin air.",
+          "No. If a refund policy, price, or feature is not in knowledge, Cuve refuses and offers a handoff. Citations only appear when a real passage was used. Strict grounding skips the language model entirely when retrieval is below the bar, so a missing policy cannot be written from thin air.",
       },
       {
         id: "c5",
@@ -69,7 +69,7 @@ export const SEED_AGENTS: Agent[] = [
         type: "policy",
         title: "Data and models",
         content:
-          "Cove answers with Grok. Customer knowledge is sent only as retrieval context for that turn and is not used to train foundation models. Conversations stay in your workspace. You can delete an agent and all of its knowledge at any time. Enterprise data processing terms are available on the Company plan.",
+          "Cuve answers with Grok. Customer knowledge is sent only as retrieval context for that turn and is not used to train foundation models. Conversations stay in your workspace. You can delete an agent and all of its knowledge at any time. Enterprise data processing terms are available on the Company plan.",
       },
     ],
     createdAt: hoursAgo(24 * 40),
@@ -128,9 +128,9 @@ export const SEED_AGENTS: Agent[] = [
       {
         id: "n5",
         type: "product",
-        title: "Cove Cap",
+        title: "Trail Cap",
         content:
-          "The Cove Cap is unstructured organic cotton twill, $32, one size with a metal slide. Colors: Fog and Ink. Not currently offered in kids' sizing.",
+          "The Trail Cap is unstructured organic cotton twill, $32, one size with a metal slide. Colors: Fog and Ink. Not currently offered in kids' sizing.",
       },
       {
         id: "n6",
@@ -339,7 +339,7 @@ export const SEED_CONVERSATIONS: Conversation[] = [
   },
   {
     id: "conv_c1",
-    agentId: COVE_ID,
+    agentId: CUVE_ID,
     visitor: "Alex Rivera",
     channel: "playground",
     status: "resolved",
@@ -355,11 +355,11 @@ export const SEED_CONVERSATIONS: Conversation[] = [
         id: "m10",
         role: "assistant",
         content:
-          "No. If a refund policy isn't in knowledge, Cove says it doesn't know and offers a handoff instead of making one up. In Strict mode the model is not even called. Citations only appear when a real passage was used.",
+          "No. If a refund policy isn't in knowledge, Cuve says it doesn't know and offers a handoff instead of making one up. In Strict mode the model is not even called. Citations only appear when a real passage was used.",
         citations: [
           {
             title: "How grounding works",
-            excerpt: "If a refund policy, price, or feature is not in knowledge, Cove refuses.",
+            excerpt: "If a refund policy, price, or feature is not in knowledge, Cuve refuses.",
             type: "faq",
           },
         ],
@@ -372,7 +372,7 @@ export const SEED_CONVERSATIONS: Conversation[] = [
   },
   {
     id: "conv_c2",
-    agentId: COVE_ID,
+    agentId: CUVE_ID,
     visitor: "Sam Okonkwo",
     channel: "playground",
     status: "handoff",

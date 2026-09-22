@@ -1,8 +1,8 @@
-# Cove
+# Cuve
 
 The support agent that cites its sources. If it cannot cite, it hands off.
 
-Train Cove on FAQs, policies, products, and procedures. Every reply shows the passage it used. Strict grounding skips the language model when retrieval is weak.
+Train Cuve on FAQs, policies, products, and procedures. Every reply shows the passage it used. Strict grounding skips the language model when retrieval is weak.
 
 ## Studio
 
@@ -12,7 +12,7 @@ Train Cove on FAQs, policies, products, and procedures. Every reply shows the pa
 - Gaps from refused questions, drafted as sources
 - Live widget studio, inbox, and analytics
 
-Seeded agents: **Cove**, **Northline** (apparel), **Lumen** (sales).
+Seeded agents: **Cuve**, **Northline** (apparel), **Lumen** (sales).
 
 ## Develop
 

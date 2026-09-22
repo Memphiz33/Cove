@@ -5,7 +5,7 @@ import { StudioHydrator } from "@/components/studio-hydrator";
 import { Toaster } from "sonner";
 import appCss from "../styles.css?url";
 
-const APP_NAME = "Cove";
+const APP_NAME = "Cuve";
 
 export const Route = createRootRoute({
   head: () => ({
@@ -16,7 +16,7 @@ export const Route = createRootRoute({
       {
         name: "description",
         content:
-          "Cove is the support agent that cites its sources. If it cannot cite, it hands off.",
+          "Cuve is the support agent that cites its sources. If it cannot cite, it hands off.",
       },
       { name: "theme-color", content: "#F3F1EC" },
     ],

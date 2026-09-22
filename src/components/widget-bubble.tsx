@@ -18,7 +18,7 @@ export function WidgetBubble({
 
   return (
     <div
-      className={cn("cove-widget pointer-events-none absolute inset-0", className)}
+      className={cn("cuve-widget pointer-events-none absolute inset-0", className)}
       data-palette={agent.widget.palette}
     >
       <div

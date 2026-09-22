@@ -9,7 +9,7 @@ export function ReceiptDemo() {
           Two replies. Only one is allowed to exist.
         </h2>
         <p className="mt-4 max-w-lg text-sm leading-relaxed text-muted-foreground">
-          Cove writes from a passage you uploaded, then shows that passage. If nothing clears the bar, the
+          Cuve writes from a passage you uploaded, then shows that passage. If nothing clears the bar, the
           model is not called. Visitors get a handoff, not a confident guess.
         </p>
         <div className="mt-10 grid gap-4 lg:grid-cols-2">
@@ -43,11 +43,11 @@ export function ReceiptDemo() {
           </article>
           <article className="rounded-2xl bg-background p-5 shadow-[var(--shadow-border)]">
             <p className="text-[11px] font-medium uppercase tracking-[0.18em] text-warning">Handoff</p>
-            <p className="mt-4 text-sm text-muted-foreground">Visitor · Cove</p>
+            <p className="mt-4 text-sm text-muted-foreground">Visitor · Cuve</p>
             <p className="mt-1 rounded-2xl rounded-br-md bg-primary px-3.5 py-2.5 text-sm text-primary-foreground">
               Do you have a store in Lisbon?
             </p>
-            <p className="mt-3 text-sm text-muted-foreground">Cove</p>
+            <p className="mt-3 text-sm text-muted-foreground">Cuve</p>
             <p className="mt-1 rounded-2xl rounded-bl-md bg-muted px-3.5 py-2.5 text-sm leading-relaxed">
               That isn’t in my sources, so I won’t invent it. Ask something I can cite, or I can connect you with a
               person.
