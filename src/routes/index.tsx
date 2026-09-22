@@ -43,7 +43,7 @@ function Hero() {
           </h1>
           <p className="mt-6 max-w-md text-base leading-relaxed text-muted-foreground sm:text-lg">
             Train Cove on FAQs, policies, products, and procedures. Every reply cites the passage it used. If it
-            cannot cite, it hands off — the model is never asked to invent.
+            cannot cite, it hands off. The model is never asked to invent.
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
             <Button size="lg" asChild>
@@ -57,7 +57,7 @@ function Hero() {
             </Button>
           </div>
           <p className="mt-6 text-xs text-muted-foreground">
-            Ask the live agent on the right. The Lisbon chip is a trap — it should hand off.
+            Ask the live agent on the right. The Lisbon chip is a trap. It should hand off.
           </p>
         </div>
         <div className="h-[min(560px,70vh)] min-h-[420px]">
@@ -105,7 +105,7 @@ function How() {
     {
       n: "03",
       title: "Place the widget",
-      body: "Design the bubble on a live page preview. Palette, position, greeting — then one embed snippet.",
+      body: "Design the bubble on a live page preview. Palette, position, greeting, then one embed snippet.",
       icon: Shield,
     },
     {
@@ -150,7 +150,7 @@ function StudioPreview() {
           </h2>
           <p className="mt-4 max-w-md text-sm leading-relaxed text-muted-foreground">
             Preview the bubble on a customer layout while knowledge is still open. Northline is a live apparel
-            agent — returns, sizing, late shipments.
+            agent for returns, sizing, and late shipments.
           </p>
           <Button className="mt-8" asChild>
             <Link to="/app/$agentId" params={{ agentId: northline.id }} search={{ tab: "widget" }}>
@@ -201,7 +201,7 @@ function WhenItStops() {
 function PricingTeaser() {
   const plans = [
     { name: "Free", price: "$0", note: "1 agent, playground, citations" },
-    { name: "Studio", price: "$39", note: "Inbox, widget, coverage — the one to ship", featured: true },
+    { name: "Studio", price: "$39", note: "Inbox, widget, coverage. The one to ship", featured: true },
     { name: "Company", price: "$129", note: "Analytics, handoff, no badge" },
   ];
   return (
@@ -240,7 +240,7 @@ function Close() {
         Only answer what you can stand behind.
       </h2>
       <p className="mx-auto mt-4 max-w-md text-muted-foreground">
-        Open a seeded agent — Northline apparel, Lumen Cloud, or Cove itself — and ask it something it should
+        Open a seeded agent (Northline apparel, Lumen Cloud, or Cove itself) and ask it something it should
         know. Then ask something it should not.
       </p>
       <Button size="lg" className="mt-8" asChild>

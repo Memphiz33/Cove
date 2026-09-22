@@ -10,7 +10,7 @@ export function ReceiptDemo() {
         </h2>
         <p className="mt-4 max-w-lg text-sm leading-relaxed text-muted-foreground">
           Cove writes from a passage you uploaded, then shows that passage. If nothing clears the bar, the
-          model is not called — visitors get a handoff, not a confident guess.
+          model is not called. Visitors get a handoff, not a confident guess.
         </p>
         <div className="mt-10 grid gap-4 lg:grid-cols-2">
           <article className="rounded-2xl bg-background p-5 shadow-[var(--shadow-border)]">
@@ -21,7 +21,7 @@ export function ReceiptDemo() {
             </p>
             <p className="mt-3 text-sm text-muted-foreground">Northline</p>
             <p className="mt-1 rounded-2xl rounded-bl-md bg-muted px-3.5 py-2.5 text-sm leading-relaxed">
-              Yes — 30 days from delivery, unworn, tags on. Start at northline.example/returns and we’ll email a
+              Yes. 30 days from delivery, unworn, tags on. Start at northline.example/returns and we’ll email a
               prepaid label. Refunds land in 5–8 business days after we scan it in.
             </p>
             <div className="mt-3 flex items-center gap-2 text-[11px] text-muted-foreground">
@@ -52,7 +52,7 @@ export function ReceiptDemo() {
               That isn’t in my sources, so I won’t invent it. Ask something I can cite, or I can connect you with a
               person.
             </p>
-            <p className="mt-3 text-[11px] font-medium text-warning">Handoff — not in sources</p>
+            <p className="mt-3 text-[11px] font-medium text-warning">Handoff, not in sources</p>
             <p className="mt-2 text-xs leading-relaxed text-muted-foreground">
               Strict mode skipped the model. There was nothing to cite, so nothing was written.
             </p>

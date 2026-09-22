@@ -115,7 +115,7 @@ export function InboxView({ agentId }: { agentId: string }) {
                   >
                     {m.content}
                     {m.role === "assistant" && m.refused ? (
-                      <p className="mt-2 text-[11px] font-medium text-warning">Handoff — not in sources</p>
+                      <p className="mt-2 text-[11px] font-medium text-warning">Handoff, not in sources</p>
                     ) : null}
                     {m.citations?.length ? (
                       <p className="mt-2 text-[11px] text-muted-foreground">
@@ -129,7 +129,7 @@ export function InboxView({ agentId }: { agentId: string }) {
           </>
         ) : (
           <div className="flex flex-1 items-center justify-center px-6 text-center text-sm text-muted-foreground">
-            Conversations from the playground and widget land here — including captured emails.
+            Conversations from the playground and widget land here, including captured emails.
           </div>
         )}
       </div>

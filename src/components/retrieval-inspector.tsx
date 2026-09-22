@@ -17,7 +17,7 @@ export function RetrievalInspector({ agent }: { agent: Agent }) {
   return (
     <div className="flex h-full min-h-0 flex-col rounded-2xl bg-card p-4 shadow-[var(--shadow-border)]">
       <p className="text-xs font-medium uppercase tracking-[0.18em] text-muted-foreground">Citation preview</p>
-      <p className="mt-1 text-sm text-muted-foreground">See what would be cited — or refused — before you ask.</p>
+      <p className="mt-1 text-sm text-muted-foreground">See what would be cited or refused before you ask.</p>
       <Input
         className="mt-4"
         value={query}

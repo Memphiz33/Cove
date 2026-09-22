@@ -12,7 +12,7 @@ export const SEED_AGENTS: Agent[] = [
     company: "Cove",
     role: "guide",
     tagline: "The support agent that cites its sources.",
-    greeting: "Hi — I'm Cove. Ask how I work, what I cost, or what happens when I don't know.",
+    greeting: "Hi, I'm Cove. Ask how I work, what I cost, or what happens when I don't know.",
     suggested: [
       "How does grounding work?",
       "What's in the Studio plan?",
@@ -41,7 +41,7 @@ export const SEED_AGENTS: Agent[] = [
         type: "faq",
         title: "How grounding works",
         content:
-          "Before answering, Cove retrieves the most relevant knowledge passages and only writes from those. Cited titles and excerpts appear under the reply. In Strict mode, a low-confidence question never reaches the model — Cove uses your handoff line instead. Assist mode still requires a source, but the bar is a little lower. Confidence is the retrieval score of the best matching passage, shown as a percentage.",
+          "Before answering, Cove retrieves the most relevant knowledge passages and only writes from those. Cited titles and excerpts appear under the reply. In Strict mode, a low-confidence question never reaches the model. Cove uses your handoff line instead. Assist mode still requires a source, but the bar is a little lower. Confidence is the retrieval score of the best matching passage, shown as a percentage.",
       },
       {
         id: "c3",
@@ -80,7 +80,7 @@ export const SEED_AGENTS: Agent[] = [
     company: "Northline Apparel",
     role: "support",
     tagline: "Outdoor layers. Fair repairs. Easy returns.",
-    greeting: "Welcome to Northline — sizing, shipping, repairs, or a jacket rec. What do you need?",
+    greeting: "Welcome to Northline. Sizing, shipping, repairs, or a jacket rec. What do you need?",
     suggested: [
       "Do you take returns?",
       "What size should I get in the Drift Jacket?",
@@ -102,7 +102,7 @@ export const SEED_AGENTS: Agent[] = [
         type: "policy",
         title: "Returns",
         content:
-          "Northline accepts returns within 30 days of delivery. Items must be unworn, unwashed, with original tags. Start a return at northline.example/returns — a prepaid label is emailed within a few hours. Refunds go back to the original payment method in 5–8 business days after the warehouse scans the parcel. Sale items marked Final are not returnable. Exchanges for size are free.",
+          "Northline accepts returns within 30 days of delivery. Items must be unworn, unwashed, with original tags. Start a return at northline.example/returns. A prepaid label is emailed within a few hours. Refunds go back to the original payment method in 5–8 business days after the warehouse scans the parcel. Sale items marked Final are not returnable. Exchanges for size are free.",
       },
       {
         id: "n2",
@@ -116,14 +116,14 @@ export const SEED_AGENTS: Agent[] = [
         type: "product",
         title: "Drift Jacket",
         content:
-          "The Drift Jacket is a recycled-nylon shell with a PFC-free DWR coat, two-way zipper, and packable hood. Price $168. Sizes XS–XXL. It runs slightly large — if you are between sizes, size down. The Regular fit is cut to layer a midweight fleece underneath. Colorways: Cedar, Fog, and Ink. The Fog colorway is currently low stock in M and L.",
+          "The Drift Jacket is a recycled-nylon shell with a PFC-free DWR coat, two-way zipper, and packable hood. Price $168. Sizes XS–XXL. It runs slightly large. If you are between sizes, size down. The Regular fit is cut to layer a midweight fleece underneath. Colorways: Cedar, Fog, and Ink. The Fog colorway is currently low stock in M and L.",
       },
       {
         id: "n4",
         type: "product",
         title: "Harbor Tee",
         content:
-          "The Harbor Tee is midweight organic cotton, $48, sizes XS–XXL. It fits true to size. Colors: Bone, Cedar, and Navy. Machine wash cold, hang dry. The Bone colorway can show wear at the collar after a year of heavy use — we cover that under the repair program.",
+          "The Harbor Tee is midweight organic cotton, $48, sizes XS–XXL. It fits true to size. Colors: Bone, Cedar, and Navy. Machine wash cold, hang dry. The Bone colorway can show wear at the collar after a year of heavy use. We cover that under the repair program.",
       },
       {
         id: "n5",
@@ -162,7 +162,7 @@ export const SEED_AGENTS: Agent[] = [
     company: "Lumen Cloud",
     role: "sales",
     tagline: "Observability for teams who ship on Fridays.",
-    greeting: "Hey — I can walk you through Lumen plans, limits, and SSO. What are you evaluating?",
+    greeting: "Hey, I can walk you through Lumen plans, limits, and SSO. What are you evaluating?",
     suggested: [
       "What's the difference between Build and Scale?",
       "Do you have SSO?",
@@ -171,7 +171,7 @@ export const SEED_AGENTS: Agent[] = [
     persona: { formality: 45, brevity: 60, empathy: 40 },
     grounding: "strict",
     handoffLine:
-      "That's not in my notes. Share an email and a teammate will follow up — I won't invent a limit or a price.",
+      "That's not in my notes. Share an email and a teammate will follow up. I won't invent a limit or a price.",
     widget: {
       position: "left",
       palette: "slate",
@@ -205,7 +205,7 @@ export const SEED_AGENTS: Agent[] = [
         type: "policy",
         title: "Trial without a card",
         content:
-          "Try Scale for 14 days without a credit card. Start on Free with just an email. Upgrade in the billing page; changes are prorated. Cancel anytime — access continues through the end of the paid period. We do not offer refunds mid-cycle except if the product is down more than 8 hours in a month (then we credit a week). Nonprofit and education teams get 40% off Build and Scale — email campus@lumen.example.",
+          "Try Scale for 14 days without a credit card. Start on Free with just an email. Upgrade in the billing page; changes are prorated. Cancel anytime. Access continues through the end of the paid period. We do not offer refunds mid-cycle except if the product is down more than 8 hours in a month (then we credit a week). Nonprofit and education teams get 40% off Build and Scale. Email campus@lumen.example.",
       },
       {
         id: "l5",
@@ -238,7 +238,7 @@ export const SEED_CONVERSATIONS: Conversation[] = [
         id: "m2",
         role: "assistant",
         content:
-          "Yes — 30 days from delivery, unworn, tags on. Start at northline.example/returns and we'll email a prepaid label. Refunds land in 5–8 business days after we scan it in.",
+          "Yes. 30 days from delivery, unworn, tags on. Start at northline.example/returns and we'll email a prepaid label. Refunds land in 5–8 business days after we scan it in.",
         citations: [
           {
             title: "Returns",
@@ -271,7 +271,7 @@ export const SEED_CONVERSATIONS: Conversation[] = [
         id: "m4",
         role: "assistant",
         content:
-          "Standard US shipping is 3–5 business days from Portland. Nine days is past that window — I don't have live tracking in this chat, so I'm passing you to a human who can pull NL-10482.",
+          "Standard US shipping is 3–5 business days from Portland. Nine days is past that window. I don't have live tracking in this chat, so I'm passing you to a human who can pull NL-10482.",
         citations: [{ title: "Shipping", excerpt: "Standard shipping arrives in 3–5 business days in the US.", type: "policy" }],
         confidence: 0.71,
         createdAt: hoursAgo(2) + 9000,
@@ -300,7 +300,7 @@ export const SEED_CONVERSATIONS: Conversation[] = [
         content:
           "Take M. The Drift runs slightly large and the Regular fit is already cut to layer a midweight fleece. Size down when you're between sizes.",
         citations: [
-          { title: "Drift Jacket", excerpt: "It runs slightly large — if you are between sizes, size down.", type: "product" },
+          { title: "Drift Jacket", excerpt: "It runs slightly large. If you are between sizes, size down.", type: "product" },
         ],
         confidence: 0.91,
         createdAt: hoursAgo(1) + 7000,
@@ -328,7 +328,7 @@ export const SEED_CONVERSATIONS: Conversation[] = [
         id: "m8",
         role: "assistant",
         content:
-          "SSO (Google and Okta) is on Scale at $99/month. Build at $29 has no SSO. A 14-day Scale trial does not need a card — I can have someone send the NDA for the SOC 2 report too.",
+          "SSO (Google and Okta) is on Scale at $99/month. Build at $29 has no SSO. A 14-day Scale trial does not need a card. I can have someone send the NDA for the SOC 2 report too.",
         citations: [{ title: "SSO and security", excerpt: "SSO is included on Scale: Google Workspace and Okta SAML.", type: "faq" }],
         confidence: 0.88,
         createdAt: hoursAgo(8) + 6000,

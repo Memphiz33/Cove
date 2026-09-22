@@ -52,7 +52,7 @@ function PricingPage() {
           One visitor message. One answer. No multipliers.
         </h1>
         <p className="mt-4 max-w-lg text-muted-foreground">
-          Cove does not meter replies. Annual billing is 20% off — this demo uses the monthly numbers.
+          Cove does not meter replies. Annual billing is 20% off. This demo uses the monthly numbers.
         </p>
         <div className="mt-12 grid gap-4 lg:grid-cols-3">
           {plans.map((p) => (

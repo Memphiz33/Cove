@@ -185,7 +185,7 @@ export function KnowledgeEditor({ agent }: { agent: Agent }) {
             <div className="flex h-full min-h-48 flex-col items-center justify-center text-center">
               <p className="font-display text-xl font-medium">Add a source</p>
               <p className="mt-2 max-w-xs text-sm text-muted-foreground">
-                FAQs, policies, products, procedures, and docs — sources this agent is allowed to cite.
+                FAQs, policies, products, procedures, and docs. These are the sources this agent is allowed to cite.
               </p>
             </div>
           )}

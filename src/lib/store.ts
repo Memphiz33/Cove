@@ -111,7 +111,7 @@ export const useStudio = create<StudioState>()(
         }),
     }),
     {
-      name: "cove-studio-v3",
+      name: "cove-studio-v4",
       skipHydration: true,
       partialize: (s) => ({ agents: s.agents, conversations: s.conversations }),
     },

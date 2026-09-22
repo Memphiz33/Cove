@@ -31,7 +31,7 @@ export function AnalyticsView({ agent }: { agent: Agent }) {
     { label: "Leads", value: String(stats.leads) },
     {
       label: "Avg grounded",
-      value: stats.avgConfidence ? `${Math.round(stats.avgConfidence * 100)}%` : "—",
+      value: stats.avgConfidence ? `${Math.round(stats.avgConfidence * 100)}%` : "n/a",
     },
     { label: "Refused", value: String(refused) },
     { label: "Coverage", value: `${Math.round(rate * 100)}%` },

@@ -54,7 +54,7 @@ export function ChatPanel({ agent, channel, variant = "page", className }: Props
       title,
       content: "",
     });
-    toast.success("Drafted in Knowledge — add the passage.");
+    toast.success("Drafted in Knowledge. Add the passage.");
   }
 
   async function send(text: string) {
@@ -204,7 +204,7 @@ export function ChatPanel({ agent, channel, variant = "page", className }: Props
 
       {error ? (
         <p className="px-4 pb-1 text-[11px] text-muted-foreground">
-          Live model unavailable — answered from knowledge.
+          Live model unavailable. Answered from knowledge.
         </p>
       ) : null}
 
@@ -279,7 +279,7 @@ function MessageBubble({
       {!mine && (message.citations?.length || pct !== null || message.refused) ? (
         <div className="max-w-[92%] space-y-1.5">
           {message.refused ? (
-            <p className="text-[11px] font-medium text-warning">Handoff — not in sources</p>
+            <p className="text-[11px] font-medium text-warning">Handoff, not in sources</p>
           ) : pct !== null ? (
             <div className="flex items-center gap-2 text-[11px] text-muted-foreground">
               <span className="h-1 w-16 overflow-hidden rounded-full bg-border">

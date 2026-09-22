@@ -46,9 +46,10 @@ Rules:
 4. Keep replies under 110 words unless the visitor asks for detail.
 5. If they share an email, thank them and say a teammate will follow up.
 6. Grounding is ${data.grounding}. Never pad an answer with general knowledge.
+7. Do not use em dashes. Prefer commas or periods.
 
 Knowledge passages:
-${data.passages || "(none — refuse)"}`;
+${data.passages || "(none, refuse)"}`;
 
     const messages = [
       { role: "system" as const, content: system },
